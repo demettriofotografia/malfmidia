@@ -6,7 +6,7 @@ export const VIDEO_WORKS: VideoWork[] = [
     id: '1',
     title: 'Comercial Tech 2024',
     category: 'Publicidade',
-    videoUrl: 'https://www.w3schools.com/html/mov_bbb.mp4',
+    videoUrl: '/videos/ideias-que-vendem.mp4',
     thumbnail: 'https://picsum.photos/seed/v1/800/450',
   },
   {
