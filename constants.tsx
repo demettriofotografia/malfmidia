@@ -39,7 +39,7 @@ export interface GalleryItem extends GalleryImage {
 export const BEHIND_THE_SCENES: GalleryItem[] = [
   { 
     id: 'b1', 
-    url: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=600', 
+    url: '/videos/ideias-que-vendem.mp4', 
     alt: 'Produção Premium MALF MIDIA',
     // Referência ao vídeo carregado pelo usuário no ambiente
     videoUrl: 'video.mp4'
