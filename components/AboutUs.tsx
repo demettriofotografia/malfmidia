@@ -86,10 +86,10 @@ const AboutUs: React.FC<AboutUsProps> = ({ content }) => {
             autoPlay 
             loop 
             muted 
-            playsInline 
-            className={`absolute inset-0 w-full h-full object-cover transition-all duration-[2500ms] ease-in-out ${videoActive ? 'grayscale-0 blur-0 scale-100 opacity-100' : 'grayscale blur-lg scale-110 opacity-30'}`}
+            playsInline
+            preload="metadata"
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${videoActive ? 'opacity-100 grayscale-0' : 'opacity-30 grayscale'}`}
           >
-            {/* ATENÇÃO: Nome do arquivo atualizado aqui embaixo */}
             <source src="/videos/video-v2.mp4" type="video/mp4" />
           </video>
 
