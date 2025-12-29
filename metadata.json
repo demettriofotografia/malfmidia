@@ -1,0 +1,8 @@
+{
+  "name": "MALF MIDIA - Agência de Produção Audiovisual",
+  "description": "Uma landing page premium para MALF MIDIA, especializada em produção de vídeo, fotografia e estratégia digital.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
