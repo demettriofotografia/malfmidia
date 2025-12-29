@@ -14,20 +14,26 @@ const InstagramPostFrame: React.FC<{
   const videoRef = useRef<HTMLVideoElement>(null);
   const isCurrentActive = activeId === item.id;
 
-  // Lógica de Play/Pause e Som
+  // Gerencia o Play/Pause e Som
   useEffect(() => {
     if (videoRef.current) {
-      // Só tenta dar play se a SEÇÃO estiver visível E este vídeo for o ativo
       if (isSectionVisible && isCurrentActive) {
+        // Só dá play se a seção estiver visível E este for o ID ativo
         videoRef.current.muted = false;
         videoRef.current.play().catch(() => {});
       } else {
-        // Se a seção sumiu ou outro vídeo foi ativado, pausa este
+        // Pausa se a seção sumir OU se outro vídeo for clicado
         videoRef.current.pause();
         videoRef.current.muted = true;
+        
+        // Se a seção sumiu da tela, "resetamos" o ID ativo para que nada 
+        // volte a tocar sozinho quando o usuário rolar de volta
+        if (!isSectionVisible && isCurrentActive) {
+          setActiveId(null);
+        }
       }
     }
-  }, [isCurrentActive, isSectionVisible]);
+  }, [isCurrentActive, isSectionVisible, setActiveId]);
 
   const handleTogglePlay = () => {
     if (isCurrentActive) {
@@ -72,6 +78,7 @@ const InstagramPostFrame: React.FC<{
           muted 
         />
         
+        {/* Ícone de Play - Aparece sempre que o vídeo não está "ativo" */}
         {!isCurrentActive && (
           <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-500 pointer-events-none">
             <div className="w-12 h-12 rounded-full bg-black/60 backdrop-blur-sm flex items-center justify-center border border-white/20">
@@ -81,7 +88,7 @@ const InstagramPostFrame: React.FC<{
         )}
       </div>
 
-      {/* Footer */}
+      {/* Footer Simples */}
       <div className="mt-3 px-1 flex items-center justify-between opacity-60">
         <div className="flex items-center gap-3">
           <button className="text-white"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
@@ -97,13 +104,12 @@ const BehindTheScenes: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  // Monitora se a seção de backstage está visível na tela
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsVisible(entry.isIntersecting);
       },
-      { threshold: 0.1 } // Se 10% da seção aparecer, ela é considerada visível
+      { threshold: 0.1 } 
     );
 
     if (sectionRef.current) {
