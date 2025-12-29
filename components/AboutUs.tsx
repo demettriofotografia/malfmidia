@@ -90,7 +90,7 @@ const AboutUs: React.FC<AboutUsProps> = ({ content }) => {
             className={`absolute inset-0 w-full h-full object-cover transition-all duration-[2500ms] ease-in-out ${videoActive ? 'grayscale-0 blur-0 scale-100 opacity-100' : 'grayscale blur-lg scale-110 opacity-30'}`}
           >
             {/* ATENÇÃO: Nome do arquivo atualizado aqui embaixo */}
-            <source src="/video-v2.mp4" type="video/mp4" />
+            <source src="/videos/video-v2.mp4" type="video/mp4" />
           </video>
 
           <div className={`absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent transition-opacity duration-1000 ${videoActive ? 'opacity-10' : 'opacity-50'}`}></div>
