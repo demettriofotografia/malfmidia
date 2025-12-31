@@ -67,18 +67,18 @@ export const BEHIND_THE_SCENES: GalleryItem[] = [
 export const FAQS: FAQItem[] = [
   {
     question: 'Qual o tempo médio de entrega de um projeto?',
-    answer: 'Depende da complexidade, mas geralmente entre 7 a 20 dias úteis para vídeos comerciais.'
+    answer: 'Depende da complexidade, mas geralmente entre 3 a 7 dias úteis para vídeos comerciais.'
   },
   {
-    question: 'Vocês atendem em todo o Brasil?',
-    answer: 'Sim! Nossa sede é fixa, mas nossa equipe é móvel e preparada para produções em qualquer localidade.'
+    question: 'Qual sua area de atuação',
+    answer: 'Nossa sede é fixa em Sombrio e nosso público também, Então se o seu conteúdo será divulgado em territorio Nacional, podemos produzir algo abrangente, agora se você quer atingir um público específico em até 100KM da nossa região, somos perfeitos pra você!.'
   },
   {
     question: 'Quais equipamentos vocês utilizam?',
-    answer: 'Trabalhamos com o que há de mais moderno no cinema digital, incluindo câmeras 4K/6K, drones homologados e sistemas de iluminação profissional.'
+    answer: 'Para um trabalho mais versátil e pratico utilizamos o que há de melhor no mobile, tanto em audio quanto em vídeo, Agora para conteúdos mais elaborados como institucionais utilizamoscâmeras 4K e iluminação profissional.'
   },
   {
     question: 'Oferecem serviços de edição para materiais já gravados?',
-    answer: 'Com certeza. Temos uma ilha de pós-produção dedicada para color grading, sound design e montagem.'
+    answer: 'Com certeza. Temos uma ilha de pós-produção dedicada para edição completa do material ou se preferir o arquivo bruto'
   }
 ];
