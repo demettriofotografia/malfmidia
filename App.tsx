@@ -11,6 +11,8 @@ import AboutUs from './components/AboutUs';
 import QuoteForm from './components/QuoteForm';
 import Footer from './components/Footer';
 import BackgroundTexture from './components/BackgroundTexture';
+import Maintenance from './components/Maintenance';
+const MAINTENANCE_MODE = true; // ← desligar quando o site estiver pronto
 
 const App: React.FC = () => {
   const [content] = useState(() => {
@@ -99,8 +101,12 @@ const App: React.FC = () => {
     { id: 'quote', label: 'ORÇAMENTO' },
     { id: 'faq', label: 'FAQ' },
   ], []);
+if (MAINTENANCE_MODE) {
+  return <Maintenance />;
+}
 
   return (
+   
     <main className="relative min-h-screen">
       <BackgroundTexture />
       
